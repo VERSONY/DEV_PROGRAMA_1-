@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Título do Menu -->
+    <h1>Menu Principal</h1>
+    <!-- Botões -->
+    <div class="menu">
+        <a href="#formAdmin" class="botao admin">Admin</a>
+        <a href="#formProduto" class="botao cadastrar">Cadastrar Produto</a>
+        <a href="#formCliente" class="botao cliente">Cliente</a> <!-- Botão Amarelo -->
+    </div>
+
+    <!-- Formulário Admin -->
+    <div id="formAdmin" class="form-container">
+        <h2>Admin</h2>
+        <form>
+            <label for="adminUser">Usuário:</label>
+            <input type="text" id="adminUser" placeholder="Digite o usuário" required>
+            <label for="adminSenha">Senha:</label>
+            <input type="password" id="adminSenha" placeholder="Digite a senha" required>
+            <button type="submit">Acessar</button>
+        </form>
+    </div>
+
+    <!-- Formulário Cadastrar Produto -->
+    <div id="formProduto" class="form-container">
+        <h2>Cadastrar Produto</h2>
+        <form action="/cadastrar_produto" method="POST">
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Digite o nome do produto" required>
+            <label for="categoriaProduto">Categoria:</label>
+            <input type="text" id="categoriaProduto" name="categoriaProduto" placeholder="Digite a categoria" required>
+            <label for="precoProduto">Preço:</label>
+            <input type="number" id="precoProduto" name="precoProduto" placeholder="Digite o preço" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+    <!-- Formulário Cliente -->
+    <div id="formCliente" class="form-container">
+        <h2>Cadastrar Cliente</h2>
+        <form action="/cadastrar_cliente" method="POST">
+            <label for="nomeCliente">Nome do Cliente:</label>
+            <input type="text" id="nomeCliente" name="nomeCliente" placeholder="Digite o nome" required>
+            <label for="emailCliente">Email:</label>
+            <input type="email" id="emailCliente" name="emailCliente" placeholder="Digite o email" required>
+            <label for="telefoneCliente">Telefone:</label>
+            <input type="tel" id="telefoneCliente" name="telefoneCliente" placeholder="Digite o telefone" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>
